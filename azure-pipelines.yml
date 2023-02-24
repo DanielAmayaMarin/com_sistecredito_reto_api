@@ -1,0 +1,23 @@
+
+trigger:
+- main
+
+pool:
+  name: Default
+
+steps:
+- task: Gradle@2
+  inputs:
+    workingDirectory: ''
+    gradleWrapperFile: 'gradlew'
+    gradleOptions: '-Xmx3072m'
+    javaHomeOption: 'JAVA_HOME'
+    jdkUserInputPath: '/Library/Java/JavaVirtualMachines/jdk-11.0.16.1.jdk/Contents/Home'
+    jdkVersionOption: '11'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/TEST-*.xml'
+    tasks: 'clean build -x test'
+- task: CmdLine@2
+  inputs:
+    script: 'gradle clean test aggregate'
