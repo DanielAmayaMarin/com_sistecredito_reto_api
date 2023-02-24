@@ -27,16 +27,6 @@ Feature: Automatización E2E en los endpoints
       | nombre | genero |
       | Daniel | Male   |
 
-  @Delete
-  Scenario Outline: Eliminar member por el método Delete
-    When Se llama la API Delete members "<id>"
-    Then Debería ver el código 200
-    Then Valido el esquema de la respuesta "DeleteJsonSchema"
-
-    Examples: Tabla Id
-      | id |
-      | 4  |
-
   @Update
   Scenario Outline: Actualización member por el método Delete
     When Se llama la API Update members
@@ -47,4 +37,14 @@ Feature: Automatización E2E en los endpoints
 
     Examples: Tabla members a actualizar
       | nombre | genero | id |
-      | Daniel | Male   | 1  |
+      | Automations | Male   | 4  |
+
+  @Delete
+  Scenario Outline: Eliminar member por el método Delete
+    When Se llama la API Delete members "<id>"
+    Then Debería ver el código 200
+    Then Valido el esquema de la respuesta "DeleteJsonSchema"
+
+    Examples: Tabla Id
+      | id |
+      | 3  |

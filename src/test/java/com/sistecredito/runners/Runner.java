@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         features = "src/test/resources/features/",
-        tags = "@Update",
+        tags = "@GetStatusSquema",
         glue = {
                 "com.sistecredito.stepsdefinitions.hook",
                 "com.sistecredito.stepsdefinitions"

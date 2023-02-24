@@ -4,7 +4,6 @@ import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.rest.questions.ResponseConsequence;
-import org.apache.http.HttpStatus;
 
 public class ValidarRespuestaEstado implements Question<Boolean> {
     private final int codigo;

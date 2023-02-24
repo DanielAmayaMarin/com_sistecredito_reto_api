@@ -1,4 +1,4 @@
-Automatización API sistecredito
+Automatización API Reto sistecredito
 ---  
 
 El framework utilizado para la automatización de las pruebas es Serenity BDD utilizando el patron de diseño Screenplay  

@@ -1,11 +1,10 @@
 package com.sistecredito.stepsdefinitions;
 
+import com.sistecredito.exceptions.AssertionsServices;
 import com.sistecredito.questions.ValidarRetornoDatos;
-import com.sistecredito.taks.ConsumeGet;
 import com.sistecredito.taks.ConsumeGetId;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -21,6 +20,8 @@ public class GetIdStepDefinition {
         theActorInTheSpotlight()
                 .should(seeThat(
                         ValidarRetornoDatos.expected(nombre))
+                        .orComplainWith(AssertionsServices.class,
+                                AssertionsServices.LOS_DATOS_DE_LA_RESPUESTA_NO_SON_LOS_CORRECTOS)
                 );
     }
 }

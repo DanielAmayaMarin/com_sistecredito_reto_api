@@ -1,5 +1,6 @@
 package com.sistecredito.stepsdefinitions;
 
+import com.sistecredito.exceptions.AssertionsServices;
 import com.sistecredito.models.MemberModel;
 import com.sistecredito.questions.ValidarRespuestaEstado;
 import com.sistecredito.taks.ConsumoPost;
@@ -21,6 +22,8 @@ public class PostStepDefinition {
     public void válidoElRegistroExitoso(Integer codigo) {
         theActorInTheSpotlight()
                 .should(seeThat(ValidarRespuestaEstado.expected(codigo))
+                        .orComplainWith(AssertionsServices.class,
+                                AssertionsServices.NO_SE_ESPERA_LA_RESPUESTA_DE_LOS_SERVICIOS_DE_CÓDIGO_DE_ESTADO)
                 );
     }
 }
