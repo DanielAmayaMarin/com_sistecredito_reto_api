@@ -1,11 +1,17 @@
 
-trigger:
-- main
-  
+schedules:
+- cron: "0 10 * * *"
+  displayName: Daily at 01:03 AM
+
 pool:
   name: Default
 
 steps:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write-Host "Dummy task to force pipeline execution"
 - task: Gradle@2
   inputs:
     workingDirectory: ''
@@ -17,7 +23,9 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
+    arguments: '--configuration $(buildConfiguration)'
     tasks: 'clean build -x test'
 - task: CmdLine@2
   inputs:
+    arguments: '--configuration $(buildConfiguration)'
     script: 'gradle clean test aggregate'
