@@ -1,10 +1,6 @@
 
 trigger:
 - main
-
-schedules:
-  - cron: "0 8 * * *"
-    displayName: Daily at 8:00 AM
   
 pool:
   name: Default
@@ -21,9 +17,7 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
-    arguments: '--configuration $(buildConfiguration)'
     tasks: 'clean build -x test'
 - task: CmdLine@2
   inputs:
-    arguments: '--configuration $(buildConfiguration)'
     script: 'gradle clean test aggregate'
