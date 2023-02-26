@@ -1,6 +1,6 @@
 
 schedules:
-- cron: "0 10 * * *"
+- cron: "0 01 * * *"
   displayName: Daily at 01:03 AM
 
 pool:
