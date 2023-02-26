@@ -3,8 +3,8 @@ trigger:
 - main
 
 schedules:
-- cron: "0 8 * * *"
-  displayName: Daily at 8:00 AM
+  - cron: "0 8 * * *"
+    displayName: Daily at 8:00 AM
   
 pool:
   name: Default
