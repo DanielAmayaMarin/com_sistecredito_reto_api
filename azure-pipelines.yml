@@ -18,7 +18,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      # Agrega aquí tu script de PowerShell
+      echo "this is a test" 
 - task: Gradle@2
   inputs:
     workingDirectory: ''
