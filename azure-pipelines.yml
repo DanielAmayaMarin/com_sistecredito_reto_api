@@ -1,7 +1,7 @@
 
 schedules:
-- cron: "07 01 * * *"
-  displayName: Daily at 01:03 AM
+- cron: "09 01 * * *"
+  displayName: Daily at 01:09 AM
 
 pool:
   name: Default
